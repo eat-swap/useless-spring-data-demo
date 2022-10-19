@@ -1,11 +1,13 @@
 package com.example.springdatademo.test
 
 import javax.persistence.Entity
-import org.springframework.data.annotation.Id
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
 
 @Entity
 class Test constructor(
     @Id
+    @GeneratedValue
     var id: Long,
 
     var name: String,
