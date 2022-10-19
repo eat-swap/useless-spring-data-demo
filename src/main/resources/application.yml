@@ -6,6 +6,9 @@ spring:
     password: p
   jpa:
     show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
   data:
     redis:
       host: 127.0.0.1
