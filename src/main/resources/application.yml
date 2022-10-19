@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://127.0.0.1:3306/db?useUnicode=true&characterEncoding=utf-8
+    username: u
+    password: p
+  jpa:
+    show-sql: true
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
