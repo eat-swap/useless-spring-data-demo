@@ -22,4 +22,9 @@ class SpringDataDemoTest @Autowired constructor(
         testService.testRedis()
     }
 
+    @Test
+    fun test() {
+        println("Testing!!")
+    }
+
 }
