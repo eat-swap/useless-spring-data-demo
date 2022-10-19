@@ -10,10 +10,19 @@ class TestService @Autowired constructor(
     val testDao: TestDao,
     val srt: StringRedisTemplate,
 ) {
+
+    companion object {
+        private const val CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+        fun randomString(): String {
+            return (0..10).map { CHARS.random() }.joinToString("")
+        }
+    }
+
     fun test() {
         val sd = testDao.save(with(Test()) {
-            name = "haha"
-            age = 18
+            name = randomString()
+            age = (18..30).random()
             this
         })
         println("Saved as ID = ${sd.id}")
@@ -37,4 +46,5 @@ class TestService @Autowired constructor(
             println("OK! String = $it")
         }
     }
+
 }
